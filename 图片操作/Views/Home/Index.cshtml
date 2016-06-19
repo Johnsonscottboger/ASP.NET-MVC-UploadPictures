@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel()
+
+    <div class="editor-lable">Image</div>
+    <div class="editor-fileld">
+        <div>
+            Upload new image:
+            <input type="file" name="Image"/>
+        </div>
+    </div>
+    <input type="submit" value="Save"/>
+}
+<div>
+    <img width="75" height="75" src="@Url.Action("GetImage")"/>
+</div>
